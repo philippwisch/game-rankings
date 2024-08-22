@@ -1,6 +1,5 @@
-DROP DATABASE IF EXISTS game_rankings;
 CREATE DATABASE game_rankings;
-
+\c game_rankings
 
 CREATE TABLE genre (
     id VARCHAR(255) PRIMARY KEY

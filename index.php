@@ -1,11 +1,12 @@
 <?php
-$host = "localhost";
+$host = "127.0.0.1";
 $port = "5432";
 $dbname = "game_rankings";
-$dbuser = "postgres";
+$dbuser = "game_rankings";
+$password = "changethispostgresspassword";
 
 // Connection string without a password
-$conn_string = "host=$host port=$port dbname=$dbname user=$dbuser";
+$conn_string = "host=$host port=$port dbname=$dbname user=$dbuser password=$password";
 
 $dbconn = pg_connect($conn_string);
 

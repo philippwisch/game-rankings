@@ -2,18 +2,26 @@
 
 # Variables
 DB_NAME="game_rankings"
-DB_USER="postgres"
+DB_USER="game_rankings"
 
 # sudo apt update
 
 # Install php8.0, apache2 and postgresql
-sudo apt install -y apache2 php8.3 postgresql
+sudo apt install -y apache2 php8.3 postgresql php8.3-pgsql
+
+## database setup
 
 # Start database
 sudo systemctl start postgresql
 
-# Create Database
-sudo -u postgres psql -f setup.sql
+# create a new user for this webapp
+sudo -u postgres psql -c "CREATE USER $DB_USER WITH PASSWORD 'changethispostgresspassword';"
+
+# Create Database and Tables
+sudo -u postgres psql -c "CREATE DATABASE $DB_NAME WITH OWNER $DB_USER;"
+sudo -u postgres psql -d $DB_NAME -f setup.sql
+
+## webserver setup
 
 # Give the webpage to the apache server
 sudo cp index.php /var/www/html

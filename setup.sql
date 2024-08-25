@@ -15,3 +15,7 @@ CREATE TABLE game_genre_rankings (
     FOREIGN KEY (game_id) REFERENCES game(id),
     FOREIGN KEY (genre_id) REFERENCES genre(id)
 );
+
+ALTER TABLE genre OWNER TO game_rankings;
+ALTER TABLE game OWNER TO game_rankings;
+ALTER TABLE game_genre_rankings OWNER TO game_rankings;

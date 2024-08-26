@@ -25,6 +25,7 @@ sudo -u postgres psql -d $DB_NAME -f setup.sql
 
 # Give the webpage to the apache server
 sudo cp index.php /var/www/html
+sudo cp styles.css /var/www/html
 sudo chown www-data:www-data /var/www/html/index.php
 sudo chmod 644 /var/www/html/index.php
 

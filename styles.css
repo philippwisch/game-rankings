@@ -1,0 +1,14 @@
+.table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.table-header, .table-data {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.table-header::first-letter {
+    text-transform: uppercase;
+}

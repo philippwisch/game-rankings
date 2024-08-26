@@ -1,10 +1,11 @@
 CREATE TABLE genre (
-    id VARCHAR(255) PRIMARY KEY
+    id VARCHAR(255) PRIMARY KEY,
+    genre VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE game (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    game VARCHAR(255) NOT NULL,
     rating int check( rating between 0 and 10)
 );
 

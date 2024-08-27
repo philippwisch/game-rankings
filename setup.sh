@@ -26,8 +26,10 @@ sudo -u postgres psql -d $DB_NAME -f setup.sql
 # Give the webpage to the apache server
 sudo cp index.php /var/www/html
 sudo cp styles.css /var/www/html
-sudo chown www-data:www-data /var/www/html/index.php
-sudo chmod 644 /var/www/html/index.php
+sudo cp script.js /var/www/html
+sudo cp game-rankings.php /var/www/html
+# sudo chown www-data:www-data /var/www/html/index.php
+# sudo chmod 644 /var/www/html/index.php
 
 # Let the server serve the given page by default instead of index.html
 echo "DirectoryIndex index.php index.html" | sudo tee -a /var/www/html/.htaccess
